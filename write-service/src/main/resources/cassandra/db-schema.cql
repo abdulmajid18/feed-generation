@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS comment_by_post (
 ) WITH CLUSTERING ORDER BY (id ASC);
 
 -- Create Likes Table (Supports both Post and Comment Likes)
-CREATE TABLE IF NOT EXISTS likes (
+CREATE TABLE IF NOT EXISTS like (
     entity_id UUID,         -- Post ID or Comment ID
     entity_type TEXT,       -- 'POST' or 'COMMENT'
     user_id UUID,           -- User who liked

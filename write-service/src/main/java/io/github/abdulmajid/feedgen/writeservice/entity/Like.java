@@ -17,7 +17,7 @@ import static org.springframework.data.cassandra.core.cql.PrimaryKeyType.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Likes {
+public class Like {
 
     @PrimaryKeyClass
     @Data

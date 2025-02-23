@@ -1,16 +1,10 @@
 spring:
   data:
     cassandra:
-      contact-points: 127.0.0.1
-      port: 9042
-      keyspace-name: instagram
-      local-datacenter: datacenter1
-      schema-action: create-if-not-exists # Auto-create keyspace/tables if not exist
-      request:
-        timeout: 10s # Timeout for queries
-      connection:
-        connect-timeout: 5s # Timeout for establishing connection
-        init-query-timeout: 5s # Initial query timeout
-      pool:
-        heartbeat-interval: 30s # Keep connection alive
-        idle-timeout: 60s # Close idle connections
+      contact-points: ${CASSANDRA_CONTACT_POINTS:localhost}
+      port: ${CASSANDRA_PORT:9042}
+      keyspace-name: ${CASSANDRA_KEYSPACE:instagram}
+      username: ${CASSANDRA_USERNAME:cassandra}
+      password: ${CASSANDRA_PASSWORD:cassandra}
+      local-datacenter: ${CASSANDRA_LOCAL_DATACENTER:datacenter1}
+      schema-action: ${CASSANDRA_SCHEMA_ACTION:CREATE_IF_NOT_EXISTS}

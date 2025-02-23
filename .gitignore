@@ -1,0 +1,63 @@
+# Compiled class files
+*.class
+*.jar
+*.war
+*.ear
+
+# Log files
+*.log
+log/
+
+# Build directories
+target/
+out/
+build/
+
+# Maven-specific files
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+dependency-reduced-pom.xml
+release.properties
+target/
+.mvn/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Gradle-specific files
+.gradle/
+build/
+gradle-app.setting
+gradle.properties
+gradlew
+gradlew.bat
+
+# Eclipse-specific files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA-specific files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code-specific files
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Java linting/cache files
+.checkstyle/
+.pmd/
+.findbugs/
+.jacoco/
+.coverage/
+
+# Dependency directories
+lib/
+node_modules/

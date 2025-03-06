@@ -1,5 +1,6 @@
 package io.github.abdulmajid18.feedgeneration;
 
+import io.github.abdulmajid18.feedgeneration.cassandra.config.CassandraService;
 import io.github.abdulmajid18.feedgeneration.server.Server;
 
 import java.io.IOException;
@@ -15,5 +16,13 @@ public class Main {
             LOGGER.log(Level.SEVERE, "Failed to start the server", e);
             throw new RuntimeException(e);
         }
+        String keyspace = "my_keyspace";
+        CassandraService cassandraService = CassandraService.getInstance();
+        cassandraService.createKeyspace(
+                keyspace,
+                "SimpleStrategy",
+                1
+        );
+        cassandraService.createPostTable(keyspace);
     }
 }

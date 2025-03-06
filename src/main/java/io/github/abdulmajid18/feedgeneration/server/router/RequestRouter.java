@@ -1,10 +1,10 @@
-package io.github.abdulmajid18.feedgeneration.server;
+package io.github.abdulmajid18.feedgeneration.server.router;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import io.github.abdulmajid18.feedgeneration.server.handler.HomeHandler;
-import io.github.abdulmajid18.feedgeneration.server.handler.statuscodes.HttpStatus;
+import io.github.abdulmajid18.feedgeneration.server.statuscodes.HttpStatus;
 
 import java.io.IOException;
 import java.io.OutputStream;

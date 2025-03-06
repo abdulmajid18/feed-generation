@@ -2,8 +2,8 @@ package io.github.abdulmajid18.feedgeneration.server.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpExchange;
-import io.github.abdulmajid18.feedgeneration.server.handler.dtos.BasicResponse;
-import io.github.abdulmajid18.feedgeneration.server.handler.statuscodes.HttpStatus;
+import io.github.abdulmajid18.feedgeneration.server.dtos.BasicResponse;
+import io.github.abdulmajid18.feedgeneration.server.statuscodes.HttpStatus;
 
 import java.io.IOException;
 import java.io.OutputStream;

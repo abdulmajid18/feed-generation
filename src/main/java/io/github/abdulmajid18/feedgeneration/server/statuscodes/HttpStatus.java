@@ -1,4 +1,4 @@
-package io.github.abdulmajid18.feedgeneration.server.handler.statuscodes;
+package io.github.abdulmajid18.feedgeneration.server.statuscodes;
 
 public enum HttpStatus {
     OK(200, "OK"),

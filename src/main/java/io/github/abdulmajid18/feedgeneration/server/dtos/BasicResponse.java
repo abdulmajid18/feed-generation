@@ -1,4 +1,4 @@
-package io.github.abdulmajid18.feedgeneration.server.handler.dtos;
+package io.github.abdulmajid18.feedgeneration.server.dtos;
 
 public class BasicResponse {
     private String message;

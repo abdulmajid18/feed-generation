@@ -9,8 +9,8 @@ import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class HttpServerApp {
-    private static final Logger LOGGER = Logger.getLogger(HttpServerApp.class.getName());
+public class Server {
+    private static final Logger LOGGER = Logger.getLogger(Server.class.getName());
     private HttpServer server;
 
     private static final int PORT = 8080;
@@ -27,14 +27,5 @@ public class HttpServerApp {
 
         LOGGER.info("Starting HTTP server on port " + PORT);
         server.start();
-    }
-
-    public static void main(String[] args) {
-        try {
-            new HttpServerApp().start();
-        } catch (IOException e) {
-            LOGGER.log(Level.SEVERE, "Failed to start the server", e);
-            throw new RuntimeException(e);
-        }
     }
 }

@@ -2,6 +2,7 @@ package io.github.abdulmajid18.feedgeneration.server.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpExchange;
+import io.github.abdulmajid18.feedgeneration.server.di.ObjectMapperSingleton;
 import io.github.abdulmajid18.feedgeneration.server.dtos.BasicResponse;
 import io.github.abdulmajid18.feedgeneration.server.statuscodes.HttpStatus;
 
@@ -10,7 +11,7 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
 public class HomeHandler extends AbstractHandler{
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = ObjectMapperSingleton.getInstance();
     @Override
     public void handle(HttpExchange exchange) throws IOException {
         String requestMethod = exchange.getRequestMethod();

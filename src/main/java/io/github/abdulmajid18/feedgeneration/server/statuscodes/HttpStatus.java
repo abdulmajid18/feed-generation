@@ -2,6 +2,7 @@ package io.github.abdulmajid18.feedgeneration.server.statuscodes;
 
 public enum HttpStatus {
     OK(200, "OK"),
+    CREATED(201, "Created"),
     METHOD_NOT_ALLOWED(405, "Method Not Allowed"),
     BAD_REQUEST(400, "Bad Request"),
     UNAUTHORIZED(401, "Unauthorized"),

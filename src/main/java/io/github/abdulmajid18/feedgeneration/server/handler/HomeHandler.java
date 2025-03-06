@@ -7,13 +7,15 @@ import io.github.abdulmajid18.feedgeneration.server.dtos.BasicResponse;
 import io.github.abdulmajid18.feedgeneration.server.statuscodes.HttpStatus;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
 public class HomeHandler extends AbstractHandler{
     private final ObjectMapper objectMapper = ObjectMapperSingleton.getInstance();
+
     @Override
-    public void handle(HttpExchange exchange) throws IOException {
+    protected void handleRequest(HttpExchange exchange) throws IOException {
         String requestMethod = exchange.getRequestMethod();
         BasicResponse response;
         exchange.getResponseHeaders().set("Content-Type", "application/json");
@@ -28,5 +30,10 @@ public class HomeHandler extends AbstractHandler{
         try (OutputStream os = exchange.getResponseBody()){
             os.write(jsonResponse.getBytes(StandardCharsets.UTF_8));
         }
+    }
+
+    @Override
+    Object readRequestBody(InputStream inputStream) throws IOException {
+        return null;
     }
 }

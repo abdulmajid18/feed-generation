@@ -10,19 +10,24 @@ import java.util.logging.Logger;
 public class Main {
     private static final Logger LOGGER = Logger.getLogger(Server.class.getName());
     public static void main(String[] args) {
+        Main application = new Main();
+        application.startServer();
+        application.setupCassandra();
+    }
+
+    private void startServer() {
         try {
             new Server().start();
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "Failed to start the server", e);
             throw new RuntimeException(e);
         }
+    }
+
+    private void setupCassandra() {
         String keyspace = "my_keyspace";
         CassandraService cassandraService = CassandraService.getInstance();
-        cassandraService.createKeyspace(
-                keyspace,
-                "SimpleStrategy",
-                1
-        );
+        cassandraService.createKeyspace(keyspace, "SimpleStrategy", 1);
         cassandraService.createPostTable(keyspace);
     }
 }
